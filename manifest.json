@@ -6,7 +6,7 @@
   "display": "standalone",
   "background_color": "#f63838",
   "start_url": "https://www.gamenewsmania.in/?utm_source=homescreen",
-  "theme_color": "#152536",
+  "theme_color": "#f63838",
   "icons": [
     {
       "src": "https://raw.githubusercontent.com/gamenewsmaniaweb/icon/main/splash-192.png",
