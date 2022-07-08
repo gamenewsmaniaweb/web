@@ -67,7 +67,7 @@
   ],
   "shortcuts": [
     {
-      "name": "Top Stories",
+      "name": "Latest Post",
       "url": "https://www.gamenewsmania.in/search?utm_source=homescreen",
       "icons": [
         {
@@ -78,22 +78,22 @@
       ]
     },
     {
-      "name": "Mobile",
-      "url": "https://www.gamenewsmania.in/search/label/Mobile?utm_source=homescreen",
+      "name": "Wiki",
+      "url": "https://www.gamenewsmania.in/search/label/Wiki?utm_source=homescreen",
       "icons": [
         {
-          "src": "https://raw.githubusercontent.com/gamenewsmaniaweb/icon/main/shortcut-icon4-192.png",
+          "src": "https://raw.githubusercontent.com/gamenewsmaniaweb/icon/main/Picsart_22-07-0Ttf.png",
           "type": "image/png",
           "sizes": "192x192"
         }
       ]
     },
     {
-      "name": "E Sports",
-      "url": "https://www.gamenewsmania.in/search/label/Esports?utm_source=homescreen",
+      "name": "Tools",
+      "url": "https://www.gamenewsmania.in/search/label/Tool?utm_source=homescreen",
       "icons": [
         {
-          "src": "https://raw.githubusercontent.com/gamenewsmaniaweb/icon/main/gaming-icon.jpg",
+          "src": "https://raw.githubusercontent.com/gamenewsmaniaweb/icon/main/Picsart_22-0-64754.png",
           "type": "image/png",
           "sizes": "192x192"
         }
