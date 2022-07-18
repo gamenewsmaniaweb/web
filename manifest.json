@@ -78,8 +78,19 @@
       ]
     },
     {
-      "name": "Wiki",
-      "url": "https://www.gamenewsmania.in/search/label/Wiki?utm_source=homescreen",
+      "name": "Free Fire",
+      "url": "https://www.gamenewsmania.in/search/label/FreeFire?utm_source=homescreen",
+      "icons": [
+        {
+          "src": "https://raw.githubusercontent.com/gamenewsmaniaweb/dev/main/unn.png",
+          "type": "image/png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "BGMI",
+      "url": "https://raw.githubusercontent.com/gamenewsmaniaweb/dev/main/unnam.png",
       "icons": [
         {
           "src": "https://raw.githubusercontent.com/gamenewsmaniaweb/icon/main/Picsart_22-07-0Ttf.png",
