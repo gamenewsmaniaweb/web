@@ -1,0 +1,1 @@
+const linksoff = document.querySelectorAll("a");linkoff.forEach(link => {if (link.href.startsWith("https://gamenewsmania.net/")) {link.setAttribute("data-turbo", "false");}});
