@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Genshin Impact 3.7 Banner Countdown</title>
+    <style>
+      * {
+        margin:0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-size: 1rem;
+        line-height: 1.5; background:#000;font-family:"Montserrat",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}a{text-decoration:none;}.hidden{display:none}
+  h1 {
+          font-size:21px;
+          margin-top: 1rem;color:#fffdfc;
+          margin-bottom: 1rem; text-align:center
+        }
+        
+        p {
+          font-size: 16.2px;
+          margin-bottom: 1rem;
+        }    
+.topMSG{font-size:16.2px; text-align:center;color:#fffdfc}
+      .notice{font-size:14.8px;text-align:center;color:#fffdfc;opacity:0.9}
+      .bg-image {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url('https://raw.githubusercontent.com/gamenewsmaniaweb/genshin-banner-countdown/master/public/nahida.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+opacity: 0.4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+      .content{margin:15px;}
+      
+#countdown-container{padding: 20px 0;}
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;margin: 10px 0;
+  }
+
+  .countdown div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+  }
+
+  .countdown div span {
+    font-size: 48px;
+    font-weight: bold;color:#fffdfc
+  }
+
+  .countdown div div {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 5px;color:#fffdfc
+  }
+.footerL{color:#fffdfc;opacity:0.9;font-size:14.8px;text-align:center;padding:10px 0;}.footerL a{color:#fffdfc;padding:0 10px;}
+
+@media screen and (min-width:940px) {.notice{padding:0 12rem;font-size:16.8px}h1{font-size:29px}.topMSG{font-size:21px}.footerL{font-size:16.8px}}
+    </style>
+<link rel="icon" href="#" sizes="32x32" /><link rel="icon" href="#" sizes="192x192" /><link rel="apple-touch-icon" href="#" />
+  </head>
+  <body>
+    <div class="bg-image"></div>
+    <div class="content">
+      <h1>Genshin Impact 3.7 Banner Countdown</h1><p class="topMSG">Nahida and Nilou Banner Countdown</p><p id="display-region" class="region"></p><div id="countdown-container">
+  <div class="countdown">
+    <div>
+      <span id="days"></span>
+      <div>Days</div>
+    </div>
+    <div>
+      <span id="hours"></span>
+      <div>Hours</div>
+    </div>
+    <div>
+      <span id="minutes"></span>
+      <div>Minutes</div>
+    </div>
+    <div>
+      <span id="seconds"></span>
+      <div>Seconds</div>
+    </div>
+  </div>
+</div>
+      <p></p>
+<p class="notice">This website is not associated with HoYoverse or any other company. The information on this website is delivered by unoficial sources. All of these timers are not guaranteed to be correct and they can be changed at any time. Use this information only for reference.</p>
+<p class="footerL"><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="https://gamenewsmania.net/privacy-policy/">Privacy</a><a href="https://gamenewsmania.net/terms-and-conditions/">Terms</a></p>
+    </div>
+<script>const countdownContainer = document.querySelector('.countdown');
+const daysElem = document.querySelector('#days');
+const hoursElem = document.querySelector('#hours');
+const minutesElem = document.querySelector('#minutes');
+const secondsElem = document.querySelector('#seconds');
+
+const releaseTime = new Date('May 24, 2023 11:00:00 UTC+8').getTime();
+
+function updateCountdown() {
+  const currentTime = new Date().getTime();
+  const timeRemaining = releaseTime - currentTime;
+
+  const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+  daysElem.innerHTML = days;
+  hoursElem.innerHTML = hours;
+  minutesElem.innerHTML = minutes;
+  secondsElem.innerHTML = seconds;
+
+  if (timeRemaining <= 0) {
+    clearInterval(countdownInterval);
+countdownContainer.style.display = 'none';
+    showNotif('Hey! New update released just now');
+  }
+}
+
+const countdownInterval = setInterval(updateCountdown, 1000);
+</script>
+<script>const regionParagraph = document.getElementById('display-region');
+
+fetch('https://ipapi.co/json/')
+  .then(response => response.json())
+  .then(data => {
+    const region = getRegionFromCountryCode(data.country_code);
+    regionParagraph.textContent = `Your region is ${region}`;
+  })
+  .catch(error => console.error(error));
+
+function getRegionFromCountryCode(countryCode) {
+  switch (countryCode) {
+    case 'US':
+    case 'CA':
+    case 'MX':
+      return 'America';
+    case 'GB':
+    case 'DE':
+    case 'FR':
+    case 'ES':
+    case 'IT':
+      return 'Europe';
+    case 'CN':
+    case 'JP':
+    case 'KR':
+    case 'SG':
+      return 'Asia';
+    case 'TW':
+    case 'HK':
+    case 'MO':
+      return 'TW, HK, MO';
+    default:
+      return 'Unknown';
+  }
+}</script>
+  </body>
+</html>
